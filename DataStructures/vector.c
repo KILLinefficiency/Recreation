@@ -67,3 +67,15 @@ void print(Vector* vec) {
     }
     printf("]\n");
 }
+
+int main() {
+    Vector vec;
+    init(&vec, 10);
+    push(&vec, 20);
+    print(&vec);
+    set(&vec, 0, 11);
+    set(&vec, 1, 22);
+    print(&vec);
+    printf("Length: %d\n", len(&vec));
+    return 0;
+}
