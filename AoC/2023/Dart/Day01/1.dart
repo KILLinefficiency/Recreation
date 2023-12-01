@@ -10,7 +10,7 @@ bool isNum(String char) {
 
 void main() {
     List<String> values = File("input.txt").readAsStringSync().trim().split("\n");
-    List<int> digits = [];
+    int answer = 0;
     for(String val in values) {
         StringBuffer number = StringBuffer();
         for(int i = 0; i < val.length; i++) {
@@ -25,8 +25,7 @@ void main() {
                 break;
             }
         }
-        digits.add(int.parse(number.toString()));
+        answer += int.parse(number.toString());
     }
-    int answer = digits.reduce((x, y) => x + y);
     print(answer);
 }
