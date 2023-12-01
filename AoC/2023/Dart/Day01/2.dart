@@ -67,7 +67,6 @@ List<String> getNums(String text) {
 void main() {
     List<String> values = File("input.txt").readAsStringSync().trim().split("\n");
     int answer = 0;
-    print("debug: " + getNums("eightwothree").toString());
     for(String val in values) {
         StringBuffer number = StringBuffer();
         List<String> n = getNums(val);
