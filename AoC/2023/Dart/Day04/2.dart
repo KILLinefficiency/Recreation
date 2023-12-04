@@ -1,5 +1,4 @@
 import "dart:io";
-import "dart:math";
 
 Set<int> makeSet(String text) {
     return text.split(" ").where((x) => x != "").map((x) => int.parse(x)).toSet();
@@ -20,7 +19,10 @@ void main() {
     List<List<int>> data = [[for(int n = 1; n <= lines.length; n++) n]];
     for(int i = 0; i < data.length; i++) {
         for(int j = 0; j < data[i].length; j++) {
-            data.add(getCopy(data[i][j]));
+            List<int> copies = getCopy(data[i][j]);
+            if(copies.length != 0) {
+                data.add(copies);
+            }
         }
     }
 
